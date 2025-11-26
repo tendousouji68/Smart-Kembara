@@ -33,7 +33,3 @@ Route::get('/galeri/detail1', function () {
 Route::get('/galeri/detail2', function () {
     return view('galeridetail2');
 });
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
