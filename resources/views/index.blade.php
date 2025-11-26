@@ -9,10 +9,10 @@
                 <div class="img-fill">
                     <div class="text-content">
                         <h6>9 hari 7 malam</h6>
-                        <h4>Quam temporibus accusam <br> hic ducimus quia</h4>
+                        <h4>Pakej Sharipuddin <br> RM 90,000</h4>
                         <p>Magni deserunt dolorem consectetur adipisicing elit. Corporis molestiae optio, laudantium odio quod rerum
                             maiores, omnis unde quae illo.</p>
-                        <a href="packages.html" class="filled-button">Pakej</a>
+                        <a href="{{ url('/pakej/smart-umrah') }}" class="filled-button">Pakej</a>
                     </div>
                 </div>
             </div>
@@ -22,10 +22,10 @@
                 <div class="img-fill">
                     <div class="text-content">
                         <h6>10 hari 8 malam</h6>
-                        <h4>Aliquam iusto harum <br> ratione porro odio</h4>
+                        <h4>Pakej Afandi <br> RM 100,000</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At culpa cupiditate mollitia adipisci assumenda
                             laborum eius quae quo excepturi, eveniet. Dicta nulla ea beatae consequuntur?</p>
-                        <a href="packages.html" class="filled-button">Pakej</a>
+                        <a href="{{ url('/pakej/smart-umrah') }}" class="filled-button">Pakej</a>
                     </div>
                 </div>
             </div>
@@ -35,10 +35,10 @@
                 <div class="img-fill">
                     <div class="text-content">
                         <h6>12 hari 10 malam</h6>
-                        <h4>Lorem ipsum dolor <br>sit amet, consectetur.</h4>
+                        <h4>Pakej Haswadi<br>RM 120,000</h4>
                         <p>Vivamus ut tellus mi. Nulla nec cursus elit, id vulputate mi. Sed nec cursus augue. Phasellus lacinia ac
                             sapien vitae dapibus. Mauris ut dapibus velit cras interdum nisl ac urna tempor mollis.</p>
-                        <a href="packages.html" class="filled-button">Pakej</a>
+                        <a href="{{ url('/pakej/smart-umrah') }}" class="filled-button">Pakej</a>
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                     <span>Mauris ut dapibus velit cras interdum nisl ac urna tempor mollis.</span>
                 </div>
                 <div class="col-md-4">
-                    <a href="contact.html" class="border-button">Contact Us</a>
+                    <a href="{{ url('/hubungi-kami') }}" class="border-button">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -82,7 +82,7 @@
                             <p>Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a mauris sit amet
                                 eleifend.</p>
 
-                            <a href="package-details.html" class="filled-button">View More</a>
+                            <a href="{{ url('/pakej-detail') }}" class="filled-button">View More</a>
                         </div>
                     </div>
 

@@ -21,4 +21,7 @@ Route::get('/tentang-kami', function () {
 Route::get('/pakej/smart-umrah', function () {
     return view('pakej.smart-umrah');
 });
-// Repeat for other pages
+
+Route::get('/pakej-detail', function () {
+    return view('pakej-detail');
+});

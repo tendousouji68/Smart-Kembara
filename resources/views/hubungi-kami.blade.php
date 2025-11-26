@@ -6,7 +6,7 @@
          <div class="row">
              <div class="col-md-12">
                  <h1>Hubungi Kami</h1>
-                 <span>feel free to send us a message now!</span>
+                 <span>Smart Kembara</span>
              </div>
          </div>
      </div>

@@ -423,11 +423,11 @@ header .navbar {
 }
 
 .Modern-Slider .item-1 .img-fill {
-	background-image: url(../images/slider-image-1-1920x900.jpg);
+	background-image: url(../images/umrah.jpg);
 }
 
 .Modern-Slider .item-2 .img-fill {
-	background-image: url(../images/slider-image-2-1920x900.jpg);
+	background-image: url(../images/slider-image-1-1920x900.jpg);
 }
 
 .Modern-Slider .item-3 .img-fill {
@@ -1213,7 +1213,7 @@ footer .contact-form button.filled-button:hover {
 
 .page-heading {
 	text-align: center;
-	background-image: url(../images/banner-image-1-1920x500.jpg);
+	background-image: url(../images/banner1.jpg);
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
