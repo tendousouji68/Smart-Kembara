@@ -86,7 +86,7 @@
                             <a class="nav-link {{ request()->is('tentang-kami') ? 'active' : '' }}" href="{{ url('/tentang-kami') }}">Tentang Kami</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                            <a class="dropdown-toggle nav-link {{ request()->is('pakej/smart-umrah') ? 'active' : '' }}{{ request()->is('pakej/smart-travel') ? 'active' : '' }}" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
                                 aria-expanded="false">Pakej</a>
 
                             <div class="dropdown-menu">
