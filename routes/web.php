@@ -23,5 +23,5 @@ Route::get('/pakej/smart-umrah', function () {
 });
 
 Route::get('/pakej-detail', function () {
-    return view('pakej-detail');
+    return view('pakej.pakej-detail');
 });
