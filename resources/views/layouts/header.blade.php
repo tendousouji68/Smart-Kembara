@@ -19,14 +19,11 @@
     <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/owl.css') }}">
-<<<<<<< HEAD
 
     <!-- Lightbox2 CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
 </head>
 
-=======
->>>>>>> master
 </head>
 
 <body>
@@ -65,11 +62,7 @@
     <header class="">
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-<<<<<<< HEAD
                 <a class="navbar-brand" href="{{ url('/') }}">
-=======
-                <a class="navbar-brand" href="index.html">
->>>>>>> master
                     <h2>Smart Kembara <em> </em></h2>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
