@@ -17,7 +17,7 @@
              <div class="col-md-12">
                  <div class="section-heading">
                      <h2>Pakej <em>Smart Umrah</em></h2>
-                     <span>Aliquam id urna imperdiet libero mollis hendrerit</span>
+                     <span>kemudahan tempahan dan pengurusan perjalanan secara dalam talian.</span>
                  </div>
              </div>
              <div class="col-md-4">
