@@ -31,12 +31,36 @@
                      <a href="#">contact@company.com</a>
                  </div>
              </div>
-             <div class="col-md-4">
+             <div class="col-md-4 mb-4">
                  <div class="contact-item">
                      <i class="fa fa-map-marker"></i>
                      <h4>Location</h4>
                      <p>212 Barrington Court New York str <br> USA</p>
                      <a href="#">View on Google Maps</a>
+                 </div>
+             </div>
+             <div class="col-md-4">
+                 <div class="contact-item">
+                     <i class="fa fa-facebook"></i>
+                     <h4>Facebook</h4>
+                     <p>212 Barrington Court New York str <br> USA</p>
+                     <a href="#">+1 333 4040 5566</a>
+                 </div>
+             </div>
+             <div class="col-md-4">
+                 <div class="contact-item">
+                     <i class="fa fa-instagram"></i>
+                     <h4>Instagram</h4>
+                     <p>212 Barrington Court New York str <br> USA</p>
+                     <a href="#">+1 333 4040 5566</a>
+                 </div>
+             </div>
+             <div class="col-md-4">
+                 <div class="contact-item">
+                     <i class="fa fa-twitter"></i>
+                     <h4>Twitter</h4>
+                     <p>212 Barrington Court New York str <br> USA</p>
+                     <a href="#">+1 333 4040 5566</a>
                  </div>
              </div>
          </div>
