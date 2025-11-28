@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PackageController;
 
 Route::get('/', function () {
     return view('index');
@@ -27,8 +28,10 @@ Route::get('/pakej/smart-travel', function () {
 });
 
 Route::get('/pakej-detail', function () {
-    return view('pakej.pakej-detail');
+    return view('pakej-detail');
 });
+
+// Route::get('/pakej-detail/{id}', [PackageController::class, 'showPackageDetails'])->name('pakej-detail');
 
 Route::get('/galeri/detail1', function () {
     return view('galeridetail1');
