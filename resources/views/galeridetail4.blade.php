@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Pantai Mengabang Telipot</h1>
+                <h1>Pantai Batu Rakit</h1>
                 <span>Galeri</span>
             </div>
         </div>
@@ -30,29 +30,29 @@
 
         <!-- Gallery Image 1 -->
         <div class="col-6 col-md-3">
-            <a href="{{ asset('assets/images/pantaimengabang1.jpg') }}" data-lightbox="gallery" data-title="Pantai Mengabang Telipot 1">
-                <img src="{{ asset('assets/images/pantaimengabang1.jpg') }}" class="gallery-img" alt="Galeri 1" loading="lazy">
+            <a href="{{ asset('assets/images/baturakit1.jpg') }}" data-lightbox="gallery" data-title="Pantai Mengabang Telipot 1">
+                <img src="{{ asset('assets/images/baturakit1.jpg') }}" class="gallery-img" alt="Galeri 1" loading="lazy">
             </a>
         </div>
 
         <!-- Gallery Image 2 -->
         <div class="col-6 col-md-3">
-            <a href="{{ asset('assets/images/pantaimengabang2.jpg') }}" data-lightbox="gallery" data-title="Pantai Mengabang Telipot 2">
-                <img src="{{ asset('assets/images/pantaimengabang2.jpg') }}" class="gallery-img" alt="Galeri 2" loading="lazy">
+            <a href="{{ asset('assets/images/baturakit2.jpg') }}" data-lightbox="gallery" data-title="Pantai Mengabang Telipot 2">
+                <img src="{{ asset('assets/images/baturakit2.jpg') }}" class="gallery-img" alt="Galeri 2" loading="lazy">
             </a>
         </div>
 
         <!-- Gallery Image 3 -->
         <div class="col-6 col-md-3">
-            <a href="{{ asset('assets/images/pantaimengabang3.jpg') }}" data-lightbox="gallery" data-title="Pantai Mengabang Telipot 3">
-                <img src="{{ asset('assets/images/pantaimengabang3.jpg') }}" class="gallery-img" alt="Galeri 3" loading="lazy">
+            <a href="{{ asset('assets/images/baturakit3.jpg') }}" data-lightbox="gallery" data-title="Pantai Mengabang Telipot 3">
+                <img src="{{ asset('assets/images/baturakit3.jpg') }}" class="gallery-img" alt="Galeri 3" loading="lazy">
             </a>
         </div>
 
         <!-- Gallery Image 4 -->
         <div class="col-6 col-md-3">
-            <a href="{{ asset('assets/images/pantaimengabang4.jpg') }}" data-lightbox="gallery" data-title="Pantai Mengabang Telipot 4">
-                <img src="{{ asset('assets/images/pantaimengabang4.jpg') }}" class="gallery-img" alt="Galeri 4" loading="lazy">
+            <a href="{{ asset('assets/images/baturakit4.jpg') }}" data-lightbox="gallery" data-title="Pantai Mengabang Telipot 4">
+                <img src="{{ asset('assets/images/baturakit4.jpg') }}" class="gallery-img" alt="Galeri 4" loading="lazy">
             </a>
         </div>
 

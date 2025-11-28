@@ -37,3 +37,15 @@ Route::get('/galeri/detail1', function () {
 Route::get('/galeri/detail2', function () {
     return view('galeridetail2');
 });
+
+Route::get('/galeri/detail3', function () {
+    return view('galeridetail3');
+});
+
+Route::get('/galeri/detail4', function () {
+    return view('galeridetail4');
+});
+
+Route::get('/pendaftaran', function () {
+    return view('login');
+});
