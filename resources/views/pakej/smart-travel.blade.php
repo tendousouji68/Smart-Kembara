@@ -50,7 +50,7 @@
                          <p>Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a mauris sit amet
                              eleifend.</p>
 
-                         <a href="package-details.html" class="filled-button">View More</a>
+                         <a href="{{ url('/pakej-detail') }}" class="filled-button">View More</a>
                      </div>
                  </div>
 
@@ -68,7 +68,7 @@
                          <p>Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a mauris sit amet
                              eleifend.</p>
 
-                         <a href="package-details.html" class="filled-button">View More</a>
+                         <a href="{{ url('/pakej-detail') }}" class="filled-button">View More</a>
                      </div>
                  </div>
 

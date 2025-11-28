@@ -12,6 +12,8 @@
 
     <title>Smart Kembara</title>
 
+    <link rel="icon" href="{{ asset('assets/images/skulogo_favicon.ico') }}" type="image/x-icon">
+
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
 
