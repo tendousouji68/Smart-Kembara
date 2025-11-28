@@ -99,19 +99,17 @@
     }
 </script>
 
-    <!-- Lightbox2 CSS -->
+<!-- Lightbox2 CSS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js">
-
     // When Lightbox modal is opened, hide the header
-document.addEventListener('lightbox:opened', function() {
-    document.querySelector('.page-heading1').style.display = 'none';
-});
+    document.addEventListener('lightbox:opened', function() {
+        document.querySelector('.page-heading1').style.display = 'none';
+    });
 
-// When Lightbox modal is closed, show the header again
-document.addEventListener('lightbox:closed', function() {
-    document.querySelector('.page-heading1').style.display = 'block';
-});
-
+    // When Lightbox modal is closed, show the header again
+    document.addEventListener('lightbox:closed', function() {
+        document.querySelector('.page-heading1').style.display = 'block';
+    });
 </script>
 
 </body>

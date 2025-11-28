@@ -13,18 +13,17 @@
 </div>
 
 <style>
-
-.gallery-img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-}
+    .gallery-img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
 </style>
 
 {{-- Galeri Section --}}
 <div class="container py-5">
-<div class="row g-4">
+    <div class="row g-4">
 
     <div class="col-6 col-md-3">
         <a href="{{ url('/galeri/detail1') }}" class="text-decoration-none">
@@ -53,9 +52,8 @@
             <p class="fw-bold text-dark text-center">Pantai Batu Rakit</p>
         </a>
     </div>
-</div>
 
 </div>
-
+</div>
 
 @include('layouts.footer')
