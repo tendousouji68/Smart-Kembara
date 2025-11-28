@@ -1,12 +1,11 @@
 @include('layouts.header')
-
 <!-- Page Content -->
 <div class="page-heading header-text">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>{{ $package->nama }}</h1>
-                <span>{{ $package->created_at->format('d M Y') }}</span>
+                <h1>{{ $subpackage->description }}</h1>
+                <span>Pakej {{ $subpackage->package->nama }}</span>
             </div>
         </div>
     </div>
@@ -16,37 +15,80 @@
     <div class="container">
         <div class="row">
             <div class="col-md-7">
-                <!-- Package images -->
-                <img src="assets/images/product-1-720x480.jpg" alt="" class="img-fluid wc-image">
-
-                <!-- Subpackage Images (Example) -->
-                @foreach($subPackages as $subPackage)
+                <div>
+                    <!-- Assuming a default image; you can add subpackage-specific images later -->
+                    <img src="{{ asset('assets/images/product-1-720x480.jpg') }}" alt="{{ $subpackage->name }}" class="img-fluid wc-image">
+                </div>
+                <br>
+                <!-- Add more images if available; for now, keep static -->
                 <div class="row">
                     <div class="col-sm-4 col-6">
                         <div>
-                            <img src="assets/images/product-1-720x480.jpg" alt="" class="img-fluid">
+                            <img src="{{ asset('assets/images/product-1-720x480.jpg') }}" alt="" class="img-fluid">
+                        </div>
+                        <br>
+                    </div>
+                    <div class="col-sm-4 col-6">
+                        <div>
+                            <img src="{{ asset('assets/images/product-2-720x480.jpg') }}" alt="" class="img-fluid">
+                        </div>
+                        <br>
+                    </div>
+                    <div class="col-sm-4 col-6">
+                        <div>
+                            <img src="{{ asset('assets/images/product-3-720x480.jpg') }}" alt="" class="img-fluid">
                         </div>
                         <br>
                     </div>
                 </div>
-                @endforeach
+                <br>
             </div>
 
             <div class="col-md-5">
                 <form action="#" method="post" class="form">
                     <ul class="list-group list-group-flush">
-                        @foreach($subPackages as $subPackage)
                         <li class="list-group-item">
                             <div class="clearfix">
-                                <span class="pull-left">{{ $subPackage->name }}</span>
-                                <strong class="pull-right">RM {{ number_format($subPackage->price, 2) }}</strong>
+                                <span class="pull-left">Package</span>
+                                <strong class="pull-right">{{ $subpackage->package->nama }}</strong>
                             </div>
                         </li>
-                        @endforeach
+                        <li class="list-group-item">
+                            <div class="clearfix">
+                                <span class="pull-left">Subpackage</span>
+                                <strong class="pull-right">{{ $subpackage->name }}</strong>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="clearfix">
+                                <span class="pull-left">Price</span>
+                                <strong class="pull-right">RM {{ number_format($subpackage->price, 0) }}</strong>
+                            </div>
+                        </li>
+                        <!-- Keep other static fields or make them dynamic if you add more DB columns -->
+                        <li class="list-group-item">
+                            <div class="clearfix">
+                                <span class="pull-left">Available</span>
+                                <strong class="pull-right">Yes</strong>
+                            </div>
+                        </li>
+                        <!-- ... (keep or adapt other list items as needed) -->
                     </ul>
                 </form>
+                <br>
+                <a href="#" data-toggle="modal" data-target="#exampleModal" class="filled-button btn-block text-center">Enquiry</a>
+                <br>
             </div>
         </div>
+
+        <!-- Adapt the rest of the view to be dynamic where possible -->
+        <div class="tabs-content" style="display: block;">
+            <h4>Description</h4>
+            <p>{{ $subpackage->description }}</p>
+        </div>
+
+        <!-- Keep the rest of the static content (e.g., map, contact) or make it dynamic if you add more DB fields -->
+        <!-- ... (rest of your original code remains unchanged) -->
     </div>
 </div>
 

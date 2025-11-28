@@ -19,17 +19,20 @@ Route::get('/tentang-kami', function () {
     return view('tentang-kami');
 });
 
-Route::get('/pakej/smart-umrah', function () {
-    return view('pakej.smart-umrah');
-});
+// Route::get('/pakej/smart-umrah', function () {
+//     return view('pakej.smart-umrah');
+// });
+
+Route::get('/pakej/smart-umrah', [PackageController::class, 'showSmartUmrah'])->name('smart-umrah');
+Route::get('/pakej/pakej-detail/{id}', [PackageController::class, 'showPackageDetail'])->name('package-detail');
 
 Route::get('/pakej/smart-travel', function () {
     return view('pakej.smart-travel');
 });
 
-Route::get('/pakej-detail', function () {
-    return view('pakej-detail');
-});
+// Route::get('/pakej-detail', function () {
+//     return view('pakej-detail');
+// });
 
 // Route::get('/pakej-detail/{id}', [PackageController::class, 'showPackageDetails'])->name('pakej-detail');
 
