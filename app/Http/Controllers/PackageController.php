@@ -26,4 +26,12 @@ class PackageController extends Controller
 
         return view('pakej.pakej-detail', compact('subpackage'));
     }
+
+    public function showSmartTravel()
+    {
+        // Fetch the "Smart Travel" package and its subpackages
+        $package = Pakej::where('nama', 'Smart Travel')->first();
+        $subpackages = $package ? $package->subpackages : collect(); // Use collection if no package found
+        return view('pakej.smart-travel', compact('subpackages'));
+    }
 }

@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>{{ $subpackage->description }}</h1>
+                <h1>{{ $subpackage->name }}</h1>
                 <span>Pakej {{ $subpackage->package->nama }}</span>
             </div>
         </div>

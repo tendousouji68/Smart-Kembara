@@ -26,9 +26,11 @@ Route::get('/tentang-kami', function () {
 Route::get('/pakej/smart-umrah', [PackageController::class, 'showSmartUmrah'])->name('smart-umrah');
 Route::get('/pakej/pakej-detail/{id}', [PackageController::class, 'showPackageDetail'])->name('package-detail');
 
-Route::get('/pakej/smart-travel', function () {
-    return view('pakej.smart-travel');
-});
+Route::get('/pakej/smart-travel', [PackageController::class, 'showSmartTravel'])->name('smart-travel');  // Tukar daripada view statik
+
+// Route::get('/pakej/smart-travel', function () {
+//     return view('pakej.smart-travel');
+// });
 
 // Route::get('/pakej-detail', function () {
 //     return view('pakej-detail');
