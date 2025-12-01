@@ -90,8 +90,8 @@
                                 aria-expanded="false">Pakej</a>
 
                             <div class="dropdown-menu">
-                                <a class="dropdown-item {{ request()->is('pakej/smart-umrah') ? 'active' : '' }}{{ request()->is('pakej/pakej-detail*') ? 'active' : '' }}" href="{{ url('/pakej/smart-umrah') }}">Smart Umrah</a>
-                                <a class="dropdown-item {{ request()->is('pakej/smart-travel') ? 'active' : '' }}" href="{{ url('/pakej/smart-travel') }}">Smart Travel</a>
+                                <a class="dropdown-item {{ request()->is('pakej/smart-umrah') ? 'active' : '' }}{{ request()->is('pakej/pakej-detail/1') ? 'active' : '' }}{{ request()->is('pakej/pakej-detail/2') ? 'active' : '' }}{{ request()->is('pakej/pakej-detail/3') ? 'active' : '' }}" href="{{ url('/pakej/smart-umrah') }}">Smart Umrah</a>
+                                <a class="dropdown-item {{ request()->is('pakej/smart-travel') ? 'active' : '' }}{{ request()->is('pakej/pakej-detail/4') ? 'active' : '' }}{{ request()->is('pakej/pakej-detail/5') ? 'active' : '' }}{{ request()->is('pakej/pakej-detail/6') ? 'active' : '' }}" href="{{ url('/pakej/smart-travel') }}">Smart Travel</a>
                             </div>
                         </li>
                         <li class="nav-item">

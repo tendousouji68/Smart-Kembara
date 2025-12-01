@@ -26,9 +26,9 @@
                     <!-- Assuming images are named based on subpackage ID or name; adjust as needed -->
                     <img src="{{ asset('assets/images/' . $subpackage->picture) }}" alt="{{ $subpackage->name }}">
                     <div class="down-content">
-                        <h4>{{ $subpackage->description }}</h4>
+                        <h4>{{ $subpackage->name }}</h4>
                         <div style="margin-bottom:10px;">
-                            <span>{{ $subpackage->name }}</span>
+                            <span>{{ $subpackage->description }}</span>
                         </div>
                         <p>RM {{ number_format($subpackage->price, 0) }}</p>
                         <!-- Link to the dynamic detail page with subpackage ID -->
