@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 28, 2025 at 07:15 AM
+-- Generation Time: Dec 01, 2025 at 06:49 AM
 -- Server version: 5.7.33
 -- PHP Version: 8.2.29
 
@@ -142,6 +142,22 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `package_departures`
+--
+
+CREATE TABLE `package_departures` (
+  `id` int(11) NOT NULL,
+  `package_id` int(11) NOT NULL,
+  `departure_date` int(11) NOT NULL,
+  `return_date` int(11) NOT NULL,
+  `status` int(11) NOT NULL,
+  `created_at` int(11) NOT NULL,
+  `updated_at` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf32;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `password_reset_tokens`
 --
 
@@ -171,8 +187,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('7Y7N8SWLlbeAwh9s99ugIcoud4X66DhLxbKyNh7D', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidENKUjJXOUNKTDZvREJ4N1NQWGUxYWx4NGNNTWFWMkdpV3Z0MVY4RyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mzk6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wYWtlai9zbWFydC11bXJhaCI7czo1OiJyb3V0ZSI7czoxMToic21hcnQtdW1yYWgiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1764304211),
-('usq5ZYxeUUhHYgNuUq1Wu0K4xegOb2QCyTGTg3E6', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiR1BlbGQ2VzBBZ2lQQ1NuZkljV0g1RzNGdndFOTNZdTlSYzlOaGJSTCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NDI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wYWtlai9wYWtlai1kZXRhaWwvMyI7czo1OiJyb3V0ZSI7czoxNDoicGFja2FnZS1kZXRhaWwiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1764314068);
+('6tbYHf01UHxwYK36DAW1YItmhaSeeC0b5SEtti1h', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiTUJGS3NUYVpJSW52R0Nxd2lKNHBNMGRMc3hKRzlZSFl4clkyNkEwViI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NDI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wYWtlai9wYWtlai1kZXRhaWwvMSI7czo1OiJyb3V0ZSI7czoxNDoicGFja2FnZS1kZXRhaWwiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1764571495);
 
 -- --------------------------------------------------------
 
@@ -308,9 +323,12 @@ CREATE TABLE `tbl_ap_subpackages` (
 --
 
 INSERT INTO `tbl_ap_subpackages` (`id`, `package_id`, `name`, `picture`, `description`, `price`, `created_at`, `updated_at`) VALUES
-(1, 1, '9 hari 7 malam', 'pakejsm1.webp', 'Basic', 90000, '2025-11-27 03:18:38', '2025-11-27 03:18:38'),
-(2, 1, '10 hari 8 malam', 'pakejsm2.webp', 'Pro', 130000, '2025-11-27 03:18:38', '2025-11-27 03:18:38'),
-(3, 1, '12 hari 10 malam', 'pakejsm3.webp', 'Pro Plus', 150000, '2025-11-27 03:20:00', '2025-11-27 03:20:00');
+(1, 1, 'Basic', 'pakejsm1.webp', '9 hari 7 malam', 90000, '2025-11-27 03:18:38', '2025-11-27 03:18:38'),
+(2, 1, 'Pro', 'pakejsm2.webp', '10 hari 8 malam', 130000, '2025-11-27 03:18:38', '2025-11-27 03:18:38'),
+(3, 1, 'Pro Plus', 'pakejsm3.webp', '12 hari 10 malam', 150000, '2025-11-27 03:20:00', '2025-11-27 03:20:00'),
+(4, 2, 'Basic', 'pakejst1.webp', '8 hari 6 malam', 80000, '2025-12-01 01:12:19', '2025-12-01 01:12:19'),
+(5, 2, 'Pro', 'pakejst2.webp', '10 hari 8 malam', 100000, '2025-12-01 01:12:19', '2025-12-01 01:12:19'),
+(6, 2, 'Pro Max', 'pakejst3.webp', '12 hari 10 malam', 200000, '2025-12-01 01:31:20', '2025-12-01 01:31:20');
 
 -- --------------------------------------------------------
 
@@ -2024,7 +2042,7 @@ ALTER TABLE `tbl_ap_status`
 -- AUTO_INCREMENT for table `tbl_ap_subpackages`
 --
 ALTER TABLE `tbl_ap_subpackages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_gi_bisness`
@@ -2115,12 +2133,6 @@ ALTER TABLE `tbl_ap_agency`
   ADD CONSTRAINT `CompanyType` FOREIGN KEY (`CompanyTypeID`) REFERENCES `tbl_gi_bisness` (`ID`),
   ADD CONSTRAINT `RegisterType` FOREIGN KEY (`RegistrationTypeID`) REFERENCES `tbl_gi_registration` (`ID`),
   ADD CONSTRAINT `StatusAgency` FOREIGN KEY (`StatusAgency`) REFERENCES `tbl_gi_status` (`ID`);
-
---
--- Constraints for table `tbl_ap_bookings`
---
-ALTER TABLE `tbl_ap_bookings`
-  ADD CONSTRAINT `tbl_ap_bookings_ibfk_1` FOREIGN KEY (`sub_package_id`) REFERENCES `tbl_ap_subpackages` (`id`);
 
 --
 -- Constraints for table `tbl_ap_status`
