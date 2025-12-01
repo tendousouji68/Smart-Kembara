@@ -1,9 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login & Register</title>
+  <!-- Login Form -->
+  <div class="form-container" id="login-form">
+    <h2>Login</h2>
+    <form>
+      <input type="email" placeholder="Email" required>
+      <input type="ntp" placeholder="No Telephone" required>
+      <input type="submit" value="Login">
+    </form>
+    <div class="form-toggle">
+      <p>Don't have an account? <a href="javascript:void(0)" onclick="toggleForm()">Register here</a></p>
+    </div>
+  </div>
+
+  <!-- Register Form -->
+  <div class="form-container" id="register-form" style="display:none;">
+    <h2>Register</h2>
+    <form>
+      <input type="text" placeholder="Username" required>
+      <input type="email" placeholder="Email" required>
+      <input type="ntp" placeholder="No Telephone" required>
+      <input type="submit" value="Register">
+    </form>
+    <div class="form-toggle">
+      <p>Already have an account? <a href="javascript:void(0)" onclick="toggleForm()">Login here</a></p>
+    </div>
+  </div>
+
+
+
+  <script>
+    function toggleForm() {
+      const loginForm = document.getElementById('login-form');
+      const registerForm = document.getElementById('register-form');
+      if (loginForm.style.display === 'none') {
+        loginForm.style.display = 'block';
+        registerForm.style.display = 'none';
+      } else {
+        loginForm.style.display = 'none';
+        registerForm.style.display = 'block';
+      }
+    }
+  </script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -17,6 +53,18 @@
       margin: 0;
     }
 
+    
+    /* Company name on the left */
+    .company-name {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #d3c618ff; /* Dark green */
+      cursor: pointer;
+    }
+
     .form-container {
       background-color: white;
       padding: 30px;
@@ -25,6 +73,10 @@
       width: 300px;
       text-align: center;
     }
+
+    .company-name:hover {
+  color: #FFD700;
+}
 
     h2 {
       color: #006747; /* Dark green */
@@ -70,49 +122,3 @@
       margin-top: 20px;
     }
   </style>
-</head>
-<body>
-
-  <!-- Login Form -->
-  <div class="form-container" id="login-form">
-    <h2>Login</h2>
-    <form>
-      <input type="email" placeholder="Email" required>
-      <input type="ntp" placeholder="No Telephone" required>
-      <input type="submit" value="Login">
-    </form>
-    <div class="form-toggle">
-      <p>Don't have an account? <a href="javascript:void(0)" onclick="toggleForm()">Register here</a></p>
-    </div>
-  </div>
-
-  <!-- Register Form -->
-  <div class="form-container" id="register-form" style="display:none;">
-    <h2>Register</h2>
-    <form>
-      <input type="text" placeholder="Username" required>
-      <input type="email" placeholder="Email" required>
-      <input type="ntp" placeholder="No Telephone" required>
-      <input type="submit" value="Register">
-    </form>
-    <div class="form-toggle">
-      <p>Already have an account? <a href="javascript:void(0)" onclick="toggleForm()">Login here</a></p>
-    </div>
-  </div>
-
-  <script>
-    function toggleForm() {
-      const loginForm = document.getElementById('login-form');
-      const registerForm = document.getElementById('register-form');
-      if (loginForm.style.display === 'none') {
-        loginForm.style.display = 'block';
-        registerForm.style.display = 'none';
-      } else {
-        loginForm.style.display = 'none';
-        registerForm.style.display = 'block';
-      }
-    }
-  </script>
-
-</body>
-</html>

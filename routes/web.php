@@ -55,3 +55,4 @@ Route::get('/galeri/detail4', function () {
 Route::get('/pendaftaran', function () {
     return view('login');
 });
+
