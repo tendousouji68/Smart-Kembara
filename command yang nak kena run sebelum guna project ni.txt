@@ -1,0 +1,22 @@
+Open the terminal in your root directory of Sneat Laravel.
+Use the following command to install the composer
+
+1. composer install
+
+Run the following command to generate the key
+
+2. php artisan key:generate
+
+By running the following command, you will be able to get all the dependencies in your node_modules folder:
+
+3. yarn
+
+To run the project, you need to run the following command in the project directory. It will compile JavaScript and Styles.
+
+4. yarn dev
+
+To serve the application, you need to run the following command in the project directory
+
+5. php artisan serve
+
+lepas dah run command "yarn" run command "yarn build" untuk run project tanpa "yarn dev"
