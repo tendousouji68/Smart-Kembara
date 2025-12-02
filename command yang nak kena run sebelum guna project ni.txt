@@ -9,6 +9,8 @@ Run the following command to generate the key
 
 By running the following command, you will be able to get all the dependencies in your node_modules folder:
 
+run command "npm install --global yarn" kalau belum install yarn dalam komputer
+
 3. yarn
 
 To run the project, you need to run the following command in the project directory. It will compile JavaScript and Styles.
@@ -20,3 +22,12 @@ To serve the application, you need to run the following command in the project d
 5. php artisan serve
 
 lepas dah run command "yarn" run command "yarn build" untuk run project tanpa "yarn dev"
+
+
+
+
+git command:
+
+"git remote -v" : untuk check connection dalam repositories
+
+Windows/Linux: Ctrl + Shift + P => Git: Clone command in the Command Palette untuk tukar git remote connection
