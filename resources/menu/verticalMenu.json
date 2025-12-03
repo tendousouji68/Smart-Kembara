@@ -40,6 +40,45 @@
       ]
     },
     {
+      "name": "Register",
+      "icon": "menu-icon icon-base bx bx-user",
+      "slug": "layouts",
+      "submenu": [
+        {
+          "url": "admin/layouts/without-menu",
+          "name": "Register Agency",
+          "slug": "layouts-without-menu"
+        },
+        {
+          "url": "admin/layouts/without-navbar",
+          "name": "Register Branch",
+          "slug": "layouts-without-navbar"
+        },
+        {
+          "url": "admin/layouts/container",
+          "name": "Register User/Agent/HR/FR/Manager/Admin",
+          "slug": "layouts-container"
+        },
+        {
+          "url": "admin/layouts/fluid",
+          "name": "Register Package/Tour",
+          "slug": "layouts-fluid"
+        },
+        {
+          "url": "admin/layouts/blank",
+          "name": "Register Form",
+          "slug": "layouts-blank",
+          "target": "_blank"
+        },
+        {
+          "url": "admin/layouts/blank",
+          "name": "Register User Akses Level",
+          "slug": "layouts-blank",
+          "target": "_blank"
+        }
+      ]
+    },
+    {
       "menuHeader": "Apps & Pages"
     },
     {
