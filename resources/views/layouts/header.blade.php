@@ -9,6 +9,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
         rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/favicon.png') }}" />
 
     <title>Smart Kembara</title>
 
@@ -63,7 +64,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <h2>Smart Kembara <em> </em></h2>
+                    <h2>Kembara Smart Umrah<em> </em></h2>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                     aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -90,8 +91,8 @@
                                 aria-expanded="false">Pakej</a>
 
                             <div class="dropdown-menu">
-                                <a class="dropdown-item {{ request()->is('pakej/smart-umrah') ? 'active' : '' }}{{ request()->is('pakej/pakej-detail*') ? 'active' : '' }}" href="{{ url('/pakej/smart-umrah') }}">Smart Umrah</a>
-                                <a class="dropdown-item {{ request()->is('pakej/smart-travel') ? 'active' : '' }}" href="{{ url('/pakej/smart-travel') }}">Smart Travel</a>
+                                <a class="dropdown-item {{ request()->is('pakej/smart-umrah') ? 'active' : '' }}{{ request()->is('pakej/pakej-detail/1') ? 'active' : '' }}{{ request()->is('pakej/pakej-detail/2') ? 'active' : '' }}{{ request()->is('pakej/pakej-detail/3') ? 'active' : '' }}" href="{{ url('/pakej/smart-umrah') }}">Smart Umrah</a>
+                                <a class="dropdown-item {{ request()->is('pakej/smart-travel') ? 'active' : '' }}{{ request()->is('pakej/pakej-detail/4') ? 'active' : '' }}{{ request()->is('pakej/pakej-detail/5') ? 'active' : '' }}{{ request()->is('pakej/pakej-detail/6') ? 'active' : '' }}" href="{{ url('/pakej/smart-travel') }}">Smart Travel</a>
                             </div>
                         </li>
                         <li class="nav-item">
