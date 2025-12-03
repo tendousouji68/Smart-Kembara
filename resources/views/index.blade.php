@@ -9,7 +9,7 @@
                 <div class="img-fill">
                     <div class="text-content">
                         <h6>9 hari 7 malam</h6>
-                        <h4>Pakej Sharipuddin <br> RM 90,000</h4>
+                        <h4>Pakej Ekonomi <br> RM 90,000</h4>
                         <p>Magni deserunt dolorem consectetur adipisicing elit. Corporis molestiae optio, laudantium odio quod rerum
                             maiores, omnis unde quae illo.</p>
                         <a href="{{ url('/pakej/smart-umrah') }}" class="filled-button">Pakej</a>
@@ -22,7 +22,7 @@
                 <div class="img-fill">
                     <div class="text-content">
                         <h6>10 hari 8 malam</h6>
-                        <h4>Pakej Afandi <br> RM 100,000</h4>
+                        <h4>Pakej Super Ekonomi <br> RM 100,000</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At culpa cupiditate mollitia adipisci assumenda
                             laborum eius quae quo excepturi, eveniet. Dicta nulla ea beatae consequuntur?</p>
                         <a href="{{ url('/pakej/smart-umrah') }}" class="filled-button">Pakej</a>
@@ -35,7 +35,7 @@
                 <div class="img-fill">
                     <div class="text-content">
                         <h6>12 hari 10 malam</h6>
-                        <h4>Pakej Haswadi<br>RM 120,000</h4>
+                        <h4>Pakej Premium<br>RM 120,000</h4>
                         <p>Vivamus ut tellus mi. Nulla nec cursus elit, id vulputate mi. Sed nec cursus augue. Phasellus lacinia ac
                             sapien vitae dapibus. Mauris ut dapibus velit cras interdum nisl ac urna tempor mollis.</p>
                         <a href="{{ url('/pakej/smart-umrah') }}" class="filled-button">Pakej</a>

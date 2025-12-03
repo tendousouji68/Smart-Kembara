@@ -9,6 +9,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
         rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/favicon.png') }}" />
 
     <title>Smart Kembara</title>
 
@@ -63,7 +64,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <h2>Smart Kembara <em> </em></h2>
+                    <h2>Kembara Smart Umrah<em> </em></h2>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                     aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
