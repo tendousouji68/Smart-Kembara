@@ -111,7 +111,7 @@ Route::get('/admin/form/layouts-horizontal', [HorizontalForm::class, 'index'])->
 // tables
 Route::get('/admin/tables/basic', [TablesBasic::class, 'index'])->name('tables-basic');
 
-
+//lupa letak tarikh
 
 //url lama
 
