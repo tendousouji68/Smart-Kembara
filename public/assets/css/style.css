@@ -1304,6 +1304,142 @@ footer .contact-form button.filled-button:hover {
 	display: block;
 }
 
+
+/* page heading gunung senyum cth */
+
+.page-heading2 {
+	text-align: center;
+	background-image: url(../images/batusenyumback.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 230px 0px 150px 0px;
+	color: #fff;
+	position: relative;
+}
+
+.page-heading2 .container {
+	position: relative;
+	z-index: 2;
+}
+
+.page-heading2:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+}
+
+.page-heading2 h1 {
+	text-transform: capitalize;
+	font-size: 36px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	margin-bottom: 18px;
+}
+
+.page-heading2 span {
+	font-size: 15px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #fff;
+	display: block;
+}
+
+/* page heading masjid putra cth */
+
+.page-heading3 {
+	text-align: center;
+	background-image: url(../images/masjidputra.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 230px 0px 150px 0px;
+	color: #fff;
+	position: relative;
+}
+
+.page-heading3 .container {
+	position: relative;
+	z-index: 2;
+}
+
+.page-heading3:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+}
+
+.page-heading3 h1 {
+	text-transform: capitalize;
+	font-size: 36px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	margin-bottom: 18px;
+}
+
+.page-heading3 span {
+	font-size: 15px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #fff;
+	display: block;
+}
+
+/* page heading pantai batu rakit cth */
+
+.page-heading4 {
+	text-align: center;
+	background-image: url(../images/baturakitback.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 230px 0px 150px 0px;
+	color: #fff;
+	position: relative;
+}
+
+.page-heading4 .container {
+	position: relative;
+	z-index: 2;
+}
+
+.page-heading4:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+}
+
+.page-heading4 h1 {
+	text-transform: capitalize;
+	font-size: 36px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	margin-bottom: 18px;
+}
+
+.page-heading4 span {
+	font-size: 15px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #fff;
+	display: block;
+}
+
 /* team */
 
 .team {

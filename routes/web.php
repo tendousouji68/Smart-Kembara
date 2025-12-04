@@ -1,5 +1,9 @@
 <?php
 
+// register user
+use App\Http\Controllers\register\registeruserdll;
+
+// dah ada
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dashboard\Analytics;
 use App\Http\Controllers\layouts\WithoutMenu;
@@ -49,6 +53,8 @@ use App\Http\Controllers\PackageController;
 // Route for the admin dashboard
 Route::get('/admin/dashboard', [Analytics::class, 'index'])->name('dashboard-analytics');
 
+  // register user
+  Route::get('/register/register-user', [registeruserdll::class, 'index'])->name('registeruserdll');
 
 // layout
 Route::get('/admin/layouts/without-menu', [WithoutMenu::class, 'index'])->name('layouts-without-menu');
@@ -206,3 +212,16 @@ Route::get('/galeri/detail1', function () {
 Route::get('/galeri/detail2', function () {
   return view('galeridetail2');
 });
+
+Route::get('/galeri/detail3', function () {
+    return view('galeridetail3');
+});
+
+Route::get('/galeri/detail4', function () {
+    return view('galeridetail4');
+});
+
+Route::get('/pendaftaran', function () {
+    return view('login');
+});
+
