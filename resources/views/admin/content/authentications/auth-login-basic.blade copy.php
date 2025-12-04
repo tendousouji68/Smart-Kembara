@@ -13,20 +13,20 @@
             <!-- Register -->
             <div class="card px-sm-6 px-0">
                 <div class="card-body">
-                    <!-- Logo --
+                    <!-- Logo -->
                     <div class="app-brand justify-content-center">
                         <a href="{{ url('/') }}" class="app-brand-link gap-2">
                             <span class="app-brand-logo demo">@include('_partials.macros')</span>
                             <span class="app-brand-text demo text-heading fw-bold">{{ config('variables.templateName') }}</span>
                         </a>
-                    </div> -->
+                    </div>
                     <!-- /Logo -->
-                    <h4 class="mb-1 text-center">Admin log in</h4>
-                    <p class="mb-6">Please enter your ID and Password</p>
+                    <h4 class="mb-1">Welcome to {{ config('variables.templateName') }}! 👋</h4>
+                    <p class="mb-6">Please sign-in to your account and start the adventure</p>
 
                     <form id="formAuthentication" class="mb-6" action="{{ url('/') }}" method="GET">
                         <div class="mb-6">
-                            <label for="email" class="form-label">ID</label>
+                            <label for="email" class="form-label">Email or Username</label>
                             <input type="text" class="form-control" id="email" name="email-username" placeholder="Enter your email or username" autofocus />
                         </div>
                         <div class="mb-6 form-password-toggle">
@@ -51,6 +51,13 @@
                             <button class="btn btn-primary d-grid w-100" type="submit">Login</button>
                         </div>
                     </form>
+
+                    <p class="text-center">
+                        <span>New on our platform?</span>
+                        <a href="{{ url('auth/register-basic') }}">
+                            <span>Create an account</span>
+                        </a>
+                    </p>
                 </div>
             </div>
             <!-- /Register -->
