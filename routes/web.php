@@ -1,5 +1,9 @@
 <?php
 
+// register user
+use App\Http\Controllers\register\registeruserdll;
+
+// dah ada
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dashboard\Analytics;
 use App\Http\Controllers\layouts\WithoutMenu;
@@ -50,6 +54,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
   // Route for the admin dashboard
   Route::get('/dashboard', [Analytics::class, 'index'])->name('dashboard-analytics');
 
+  // register user
+  Route::get('/register/register-user', [registeruserdll::class, 'index'])->name('registeruserdll');
 
   // layout
   Route::get('/layouts/without-menu', [WithoutMenu::class, 'index'])->name('layouts-without-menu');

@@ -55,9 +55,9 @@
           "slug": "layouts-without-navbar"
         },
         {
-          "url": "admin/layouts/container",
+          "url": "admin/register/register-user",
           "name": "Register User/Agent/HR/FR/Manager/Admin",
-          "slug": "layouts-container"
+          "slug": "registeruserdll"
         },
         {
           "url": "admin/layouts/fluid",
