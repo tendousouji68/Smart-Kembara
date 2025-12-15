@@ -90,53 +90,54 @@ class PackageController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    {
-        // Validate the input data
-        $validated = $request->validate([
-            'nama' => 'required|string|max:255',
-            'PackageCode' => 'nullable|string|max:255',
-            'PackageStatus' => 'required|boolean',
-            'subpackages' => 'required|array',
-            'subpackages.*.id' => 'nullable|exists:tbl_ap_subpackages,id', // For existing subpackages
-            'subpackages.*.name' => 'required|string|max:255',
-        ]);
+{
+    // Validate the input data (added rule for 'deleted')
+    $validated = $request->validate([
+        'nama' => 'required|string|max:255',
+        'PackageCode' => 'nullable|string|max:255',
+        'PackageStatus' => 'required|boolean',
+        'subpackages' => 'required|array',
+        'subpackages.*.id' => 'nullable|exists:tbl_ap_subpackages,id', // For existing subpackages
+        'subpackages.*.name' => 'required|string|max:255',
+        'subpackages.*.deleted' => 'nullable|boolean', // Allow 'deleted' flag for existing subpackages
+    ]);
 
-        // Find the package
-        $package = Package::findOrFail($id);
+    // Find the package
+    $package = Package::findOrFail($id);
 
-        // Update the package
-        $package->update([
-            'nama' => $validated['nama'],
-            'PackageCode' => $validated['PackageCode'],
-            'PackageStatus' => $validated['PackageStatus'],
-        ]);
+    // Update the package
+    $package->update([
+        'nama' => $validated['nama'],
+        'PackageCode' => $validated['PackageCode'],
+        'PackageStatus' => $validated['PackageStatus'],
+    ]);
 
-        // Handle the subpackage updates and deletions
-        foreach ($validated['subpackages'] as $subpackageData) {
-            if (isset($subpackageData['id'])) {
-                // If the subpackage is marked as deleted, delete it
-                if (isset($subpackageData['deleted']) && $subpackageData['deleted']) {
-                    $subpackage = Subpackage::findOrFail($subpackageData['id']);
-                    $subpackage->delete();
-                } else {
-                    // Update the existing subpackage
-                    $subpackage = Subpackage::findOrFail($subpackageData['id']);
-                    $subpackage->update([
-                        'name' => $subpackageData['name'],
-                    ]);
-                }
+    // Handle the subpackage updates and deletions
+    foreach ($validated['subpackages'] as $subpackageData) {
+        if (isset($subpackageData['id'])) {
+            // If the subpackage is marked as deleted, delete it
+            if (isset($subpackageData['deleted']) && $subpackageData['deleted']) {
+                $subpackage = Subpackage::findOrFail($subpackageData['id']);
+                $subpackage->delete();
             } else {
-                // Create a new subpackage if it doesn't exist
-                Subpackage::create([
+                // Update the existing subpackage
+                $subpackage = Subpackage::findOrFail($subpackageData['id']);
+                $subpackage->update([
                     'name' => $subpackageData['name'],
-                    'package_id' => $package->id,
                 ]);
             }
+        } else {
+            // Create a new subpackage if it doesn't exist
+            Subpackage::create([
+                'name' => $subpackageData['name'],
+                'package_id' => $package->id,
+            ]);
         }
-
-        // Redirect to the package index with a success message
-        return redirect()->route('packages.index')->with('success', 'Package updated successfully.');
     }
+
+    // Redirect to the package index with a success message
+    return redirect()->route('packages.index')->with('success', 'Package updated successfully.');
+}
 
     /**
      * Remove the specified resource from storage.
@@ -155,6 +156,6 @@ class PackageController extends Controller
         $package->delete();
 
         // Return a success response
-        return response()->json(['message' => 'Package and associated subpackages deleted successfully']);
+        return to_route("packages.index");
     }
 }

@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             ApPackagesSeeder::class,
             ApSubpackagesSeeder::class,
+            GiStatusSeeder::class,
         ]);
     }
 }

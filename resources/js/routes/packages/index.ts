@@ -1,83 +1,5 @@
 import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition, applyUrlDefaults } from './../../wayfinder'
 /**
-* @see \App\Http\Controllers\PackageController::index
- * @see app/Http/Controllers/PackageController.php:15
- * @route '/packages'
- */
-export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
-    url: index.url(options),
-    method: 'get',
-})
-
-index.definition = {
-    methods: ["get","head"],
-    url: '/packages',
-} satisfies RouteDefinition<["get","head"]>
-
-/**
-* @see \App\Http\Controllers\PackageController::index
- * @see app/Http/Controllers/PackageController.php:15
- * @route '/packages'
- */
-index.url = (options?: RouteQueryOptions) => {
-    return index.definition.url + queryParams(options)
-}
-
-/**
-* @see \App\Http\Controllers\PackageController::index
- * @see app/Http/Controllers/PackageController.php:15
- * @route '/packages'
- */
-index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
-    url: index.url(options),
-    method: 'get',
-})
-/**
-* @see \App\Http\Controllers\PackageController::index
- * @see app/Http/Controllers/PackageController.php:15
- * @route '/packages'
- */
-index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
-    url: index.url(options),
-    method: 'head',
-})
-
-    /**
-* @see \App\Http\Controllers\PackageController::index
- * @see app/Http/Controllers/PackageController.php:15
- * @route '/packages'
- */
-    const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: index.url(options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\PackageController::index
- * @see app/Http/Controllers/PackageController.php:15
- * @route '/packages'
- */
-        indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: index.url(options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\PackageController::index
- * @see app/Http/Controllers/PackageController.php:15
- * @route '/packages'
- */
-        indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: index.url({
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    index.form = indexForm
-/**
 * @see \App\Http\Controllers\PackageController::create
  * @see app/Http/Controllers/PackageController.php:29
  * @route '/packages/create'
@@ -210,103 +132,6 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
         })
     
     store.form = storeForm
-/**
-* @see \App\Http\Controllers\PackageController::show
- * @see app/Http/Controllers/PackageController.php:70
- * @route '/packages/{package}'
- */
-export const show = (args: { package: string | number } | [packageParam: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
-    url: show.url(args, options),
-    method: 'get',
-})
-
-show.definition = {
-    methods: ["get","head"],
-    url: '/packages/{package}',
-} satisfies RouteDefinition<["get","head"]>
-
-/**
-* @see \App\Http\Controllers\PackageController::show
- * @see app/Http/Controllers/PackageController.php:70
- * @route '/packages/{package}'
- */
-show.url = (args: { package: string | number } | [packageParam: string | number ] | string | number, options?: RouteQueryOptions) => {
-    if (typeof args === 'string' || typeof args === 'number') {
-        args = { package: args }
-    }
-
-    
-    if (Array.isArray(args)) {
-        args = {
-                    package: args[0],
-                }
-    }
-
-    args = applyUrlDefaults(args)
-
-    const parsedArgs = {
-                        package: args.package,
-                }
-
-    return show.definition.url
-            .replace('{package}', parsedArgs.package.toString())
-            .replace(/\/+$/, '') + queryParams(options)
-}
-
-/**
-* @see \App\Http\Controllers\PackageController::show
- * @see app/Http/Controllers/PackageController.php:70
- * @route '/packages/{package}'
- */
-show.get = (args: { package: string | number } | [packageParam: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
-    url: show.url(args, options),
-    method: 'get',
-})
-/**
-* @see \App\Http\Controllers\PackageController::show
- * @see app/Http/Controllers/PackageController.php:70
- * @route '/packages/{package}'
- */
-show.head = (args: { package: string | number } | [packageParam: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
-    url: show.url(args, options),
-    method: 'head',
-})
-
-    /**
-* @see \App\Http\Controllers\PackageController::show
- * @see app/Http/Controllers/PackageController.php:70
- * @route '/packages/{package}'
- */
-    const showForm = (args: { package: string | number } | [packageParam: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: show.url(args, options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\PackageController::show
- * @see app/Http/Controllers/PackageController.php:70
- * @route '/packages/{package}'
- */
-        showForm.get = (args: { package: string | number } | [packageParam: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: show.url(args, options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\PackageController::show
- * @see app/Http/Controllers/PackageController.php:70
- * @route '/packages/{package}'
- */
-        showForm.head = (args: { package: string | number } | [packageParam: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: show.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    show.form = showForm
 /**
 * @see \App\Http\Controllers\PackageController::edit
  * @see app/Http/Controllers/PackageController.php:78
@@ -513,7 +338,7 @@ update.patch = (args: { package: string | number } | [packageParam: string | num
     update.form = updateForm
 /**
 * @see \App\Http\Controllers\PackageController::destroy
- * @see app/Http/Controllers/PackageController.php:144
+ * @see app/Http/Controllers/PackageController.php:145
  * @route '/packages/{package}'
  */
 export const destroy = (args: { package: string | number } | [packageParam: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
@@ -528,7 +353,7 @@ destroy.definition = {
 
 /**
 * @see \App\Http\Controllers\PackageController::destroy
- * @see app/Http/Controllers/PackageController.php:144
+ * @see app/Http/Controllers/PackageController.php:145
  * @route '/packages/{package}'
  */
 destroy.url = (args: { package: string | number } | [packageParam: string | number ] | string | number, options?: RouteQueryOptions) => {
@@ -556,7 +381,7 @@ destroy.url = (args: { package: string | number } | [packageParam: string | numb
 
 /**
 * @see \App\Http\Controllers\PackageController::destroy
- * @see app/Http/Controllers/PackageController.php:144
+ * @see app/Http/Controllers/PackageController.php:145
  * @route '/packages/{package}'
  */
 destroy.delete = (args: { package: string | number } | [packageParam: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
@@ -566,7 +391,7 @@ destroy.delete = (args: { package: string | number } | [packageParam: string | n
 
     /**
 * @see \App\Http\Controllers\PackageController::destroy
- * @see app/Http/Controllers/PackageController.php:144
+ * @see app/Http/Controllers/PackageController.php:145
  * @route '/packages/{package}'
  */
     const destroyForm = (args: { package: string | number } | [packageParam: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -581,7 +406,7 @@ destroy.delete = (args: { package: string | number } | [packageParam: string | n
 
             /**
 * @see \App\Http\Controllers\PackageController::destroy
- * @see app/Http/Controllers/PackageController.php:144
+ * @see app/Http/Controllers/PackageController.php:145
  * @route '/packages/{package}'
  */
         destroyForm.delete = (args: { package: string | number } | [packageParam: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -595,14 +420,189 @@ destroy.delete = (args: { package: string | number } | [packageParam: string | n
         })
     
     destroy.form = destroyForm
+/**
+* @see \App\Http\Controllers\PackageController::index
+ * @see app/Http/Controllers/PackageController.php:15
+ * @route '/packages'
+ */
+export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: index.url(options),
+    method: 'get',
+})
+
+index.definition = {
+    methods: ["get","head"],
+    url: '/packages',
+} satisfies RouteDefinition<["get","head"]>
+
+/**
+* @see \App\Http\Controllers\PackageController::index
+ * @see app/Http/Controllers/PackageController.php:15
+ * @route '/packages'
+ */
+index.url = (options?: RouteQueryOptions) => {
+    return index.definition.url + queryParams(options)
+}
+
+/**
+* @see \App\Http\Controllers\PackageController::index
+ * @see app/Http/Controllers/PackageController.php:15
+ * @route '/packages'
+ */
+index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: index.url(options),
+    method: 'get',
+})
+/**
+* @see \App\Http\Controllers\PackageController::index
+ * @see app/Http/Controllers/PackageController.php:15
+ * @route '/packages'
+ */
+index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: index.url(options),
+    method: 'head',
+})
+
+    /**
+* @see \App\Http\Controllers\PackageController::index
+ * @see app/Http/Controllers/PackageController.php:15
+ * @route '/packages'
+ */
+    const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: index.url(options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\PackageController::index
+ * @see app/Http/Controllers/PackageController.php:15
+ * @route '/packages'
+ */
+        indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: index.url(options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\PackageController::index
+ * @see app/Http/Controllers/PackageController.php:15
+ * @route '/packages'
+ */
+        indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: index.url({
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    index.form = indexForm
+/**
+* @see \App\Http\Controllers\PackageController::show
+ * @see app/Http/Controllers/PackageController.php:70
+ * @route '/packages/{package}'
+ */
+export const show = (args: { package: string | number } | [packageParam: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: show.url(args, options),
+    method: 'get',
+})
+
+show.definition = {
+    methods: ["get","head"],
+    url: '/packages/{package}',
+} satisfies RouteDefinition<["get","head"]>
+
+/**
+* @see \App\Http\Controllers\PackageController::show
+ * @see app/Http/Controllers/PackageController.php:70
+ * @route '/packages/{package}'
+ */
+show.url = (args: { package: string | number } | [packageParam: string | number ] | string | number, options?: RouteQueryOptions) => {
+    if (typeof args === 'string' || typeof args === 'number') {
+        args = { package: args }
+    }
+
+    
+    if (Array.isArray(args)) {
+        args = {
+                    package: args[0],
+                }
+    }
+
+    args = applyUrlDefaults(args)
+
+    const parsedArgs = {
+                        package: args.package,
+                }
+
+    return show.definition.url
+            .replace('{package}', parsedArgs.package.toString())
+            .replace(/\/+$/, '') + queryParams(options)
+}
+
+/**
+* @see \App\Http\Controllers\PackageController::show
+ * @see app/Http/Controllers/PackageController.php:70
+ * @route '/packages/{package}'
+ */
+show.get = (args: { package: string | number } | [packageParam: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: show.url(args, options),
+    method: 'get',
+})
+/**
+* @see \App\Http\Controllers\PackageController::show
+ * @see app/Http/Controllers/PackageController.php:70
+ * @route '/packages/{package}'
+ */
+show.head = (args: { package: string | number } | [packageParam: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: show.url(args, options),
+    method: 'head',
+})
+
+    /**
+* @see \App\Http\Controllers\PackageController::show
+ * @see app/Http/Controllers/PackageController.php:70
+ * @route '/packages/{package}'
+ */
+    const showForm = (args: { package: string | number } | [packageParam: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: show.url(args, options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\PackageController::show
+ * @see app/Http/Controllers/PackageController.php:70
+ * @route '/packages/{package}'
+ */
+        showForm.get = (args: { package: string | number } | [packageParam: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: show.url(args, options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\PackageController::show
+ * @see app/Http/Controllers/PackageController.php:70
+ * @route '/packages/{package}'
+ */
+        showForm.head = (args: { package: string | number } | [packageParam: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: show.url(args, {
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    show.form = showForm
 const packages = {
-    index: Object.assign(index, index),
-create: Object.assign(create, create),
+    create: Object.assign(create, create),
 store: Object.assign(store, store),
-show: Object.assign(show, show),
 edit: Object.assign(edit, edit),
 update: Object.assign(update, update),
 destroy: Object.assign(destroy, destroy),
+index: Object.assign(index, index),
+show: Object.assign(show, show),
 }
 
 export default packages

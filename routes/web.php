@@ -50,7 +50,20 @@ Route::resource("roles", RoleController::class)
                     ->only(['index', 'show'])
                     ->middleware("permission:roles.create|roles.edit|roles.delete|roles.view");    
 
-Route::resource("packages", PackageController::class);
+Route::resource("packages", PackageController::class)
+                    ->only(['create', 'store'])
+                    ->middleware("permission:packages.create");
+Route::resource("packages", PackageController::class)
+                    ->only(['edit', 'update'])
+                    ->middleware("permission:packages.edit");
+
+Route::resource("packages", PackageController::class)
+                    ->only(['destroy'])
+                    ->middleware("permission:packages.delete");   
+
+Route::resource("packages", PackageController::class)
+                    ->only(['index', 'show'])
+                    ->middleware("permission:packages.create|packages.edit|packages.delete|packages.view");   
 
 Route::resource("subpackages", SubpackageController::class);
 

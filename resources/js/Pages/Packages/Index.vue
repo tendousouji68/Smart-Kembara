@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import AppLayout from '@/layouts/AppLayout.vue';
-import { type Package } from '@/types';  // Make sure Package type is defined
+import { type BreadcrumbItem } from '@/types';  // Make sure Package type is defined
 import { Head, Link, router } from '@inertiajs/vue3';
 import { can } from '@/lib/can'; // Assuming you have a permissions system
 
-// Breadcrumb configuration for Packages
-const breadcrumbs = [
+const breadcrumbs: BreadcrumbItem[] = [
   {
     title: 'Packages',
     href: '/packages',
@@ -39,6 +38,7 @@ function deletePackage(id: number) {
   <Head title="Packages" />
 
   <AppLayout :breadcrumbs="breadcrumbs">
+
     <div class="p-3">
       <h1 class="text-2xl font-bold mb-4">Packages</h1>
 
@@ -50,29 +50,31 @@ function deletePackage(id: number) {
       </Link>
 
       <div class="overflow-x-auto mt-4">
-        <table class="w-full text-sm text-left text-gray-700">
-          <thead class="text-xs uppercase bg-gray-50 text-gray-700">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th scope="col" class="px-6 py-3">ID</th>
               <th scope="col" class="px-6 py-3">Name</th>
+              <th scope="col" class="px-6 py-3">Package Code</th>
               <th scope="col" class="px-6 py-3">Package Status</th>
               <th scope="col" class="px-6 py-3">Subpackages</th>
               <th scope="col" class="px-6 py-3 w-70">Actions</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="packageItem in packages" :key="packageItem.id" class="odd:bg-white even:bg-gray-50 border-b border-gray-200">
-              <td class="px-6 py-2 font-medium text-gray-900">{{ packageItem.id }}</td>
-              <td class="px-6 py-2 text-gray-700">{{ packageItem.nama }}</td>
-              <td class="px-6 py-2 text-gray-700">
+            <tr v-for="packageItem in packages" :key="packageItem.id" class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700 border-gray-200">
+              <td class="px-6 py-2 font-medium text-gray-900 dark:text-white">{{ packageItem.id }}</td>
+              <td class="px-6 py-2 text-gray-600 dark:text-gray-300">{{ packageItem.nama }}</td>
+              <td class="px-6 py-2 text-gray-600 dark:text-gray-300">{{ packageItem.PackageCode }}</td>
+              <td class="px-6 py-2 text-gray-600 dark:text-gray-300">
                 <span v-if="packageItem.PackageStatus === 1" class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Active</span>
                 <span v-else class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">Inactive</span>
               </td>
               <!-- Display subpackages -->
-              <td class="px-6 py-2 text-gray-700">
+              <td class="px-6 py-2 text-gray-600 dark:text-gray-300">
                 <div v-if="packageItem.subpackages.length > 0">
-                  <ul class="list-none">
-                    <li v-for="subpackage in packageItem.subpackages" :key="subpackage.id" class="text-xs text-gray-600">
+                  <ul class="list-none ">
+                    <li v-for="subpackage in packageItem.subpackages" :key="subpackage.id" class="text-xs text-gray-600 dark:text-gray-300">
                       {{ subpackage.name }} <!-- Assuming 'name' is a property of Subpackage -->
                     </li>
                   </ul>

@@ -49,7 +49,7 @@ function deleteUser (id){
                 <tbody>
                 <tr v-for="role in roles" class="odd:bg-white even:bg-gray-50 border-b border-gray-200">
                     <td class="px-6 py-2 font-medium text-gray-900">{{role.id}}</td>
-                    <td class="px-6 py-2 text-gray-700">{{role.name}}</td>
+                    <td class="px-6 py-2 text-gray-700">{{role.description}}</td>
                     <td class="px-6 py-2 text-gray-700">
                         <span
                             v-for="permission in role.permissions"
