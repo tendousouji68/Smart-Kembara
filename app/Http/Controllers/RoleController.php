@@ -9,70 +9,97 @@ use Spatie\Permission\Models\Role;
 
 class RoleController extends Controller
 {
-    public function index(Request $request){
-        return Inertia::render('Role/RoleList');
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+       return Inertia::render("Roles/Index",[
+            "roles" => Role::with("permissions")->get()
+        ]);
     }
 
-    public function indexEdit(Request $request){
-        $role = Role::find($request->id);
-        $permission = Permission::get()->groupBy('group');
-        $checked = $role->permissions->pluck('id');
-
-        return Inertia::render('Role/RoleEdit', compact('role','permission','checked'));
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+       return Inertia::render("Roles/Create", [
+        "permissions" => Permission::pluck("name")->all()
+       ]);
     }
 
-    public function filter(Request $request){
-        $search = $request->input('search');
-        $paginate = $request->input('paginate', 10);
-        $page = $request->input('page', 1);
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+      $request->validate([
+        "name" => "required",
+        "permissions" => "required"
+      ]);
 
-        $sort_direction = $request->input('sort_direction', 'desc');
-        $sort_field = $request->input('sort_field', 'updated_at');
+      $role = Role::create(["name" => $request->name]);
 
-        $role = Role::whereNot('name', 'super-admin')
-        ->when($search, function ($query, $search) {
-            $query->where('name', 'like', '%'.$search.'%')
-                ->orWhere('description', 'like', '%'.$search.'%');
-            })
-            ->orderBy($sort_field,$sort_direction)
-            ->offset(($page - 1) * $paginate)
-            ->paginate($paginate);
+      $role->syncPermissions($request->permissions);
 
-        return response()->json($role);
+      return to_route("roles.index");
     }
 
-    public function create(Request $request){
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        $role = Role::find($id);
 
-        $name = str_replace(" ", "-", strtolower($request->name));
-        $description = ucwords(strtolower($request->name));
-
-        $role = new Role();
-        $role->name = $name;
-        $role->description = $description;
-        $role->guard_name = 'web';
-        $role->save();
-
-        return to_route('role')->with('status', true);
+        return Inertia::render("Roles/Show", [
+            "role" => $role,
+            "rolePermissions" => $role->permissions()->pluck("name")->all(),
+       ]);
     }
 
-    public function update(Request $request){
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
+        $role = Role::find($id);
 
-        $role = Role::find($request->role_id);
-        $permission = Permission::find($request->permission_id);
-
-        if($role->hasPermissionTo($permission->name)){
-            $role->revokePermissionTo($permission->name);
-        }else{
-            $role->givePermissionTo($permission->name);
-        }
-
-        return to_route('role.edit',$role->id)->with('status', true);
+        return Inertia::render("Roles/Edit", [
+            "role" => $role,
+            "rolePermissions" => $role->permissions()->pluck("name")->all(),
+            "permissions" => Permission::pluck("name")->all()
+        ]);
     }
 
-    public function destroy(Request $request){
-        $role = Role::find($request->id);
-        $role->delete();
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
+      $request->validate([
+        "name" => "required",
+        "permissions" => "required"
+      ]);
 
-        return to_route('role')->with('status', true);
+      $role = Role::find($id);
+
+      $role->name = $request->name;
+      $role->save();
+
+      $role->syncPermissions($request->permissions);
+
+      return to_route("roles.index");
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        Role::destroy($id);
+
+        return to_route("roles.index");
     }
 }

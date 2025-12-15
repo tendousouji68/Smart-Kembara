@@ -1,60 +1,57 @@
 <?php
 
-use App\Http\Controllers\ComponentController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PackageController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\SubpackageController;
 use App\Http\Controllers\UserController;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use Laravel\Fortify\Features;
 
 Route::get('/', function () {
-    // return Inertia::render('Welcome', [
-    //     'canLogin' => Route::has('login'),
-    //     'canRegister' => Route::has('register'),
-    //     'laravelVersion' => Application::VERSION,
-    //     'phpVersion' => PHP_VERSION,
-    // ]);
-    return to_route('login');
-});
+    return Inertia::render('Welcome', [
+        'canRegister' => Features::enabled(Features::registration()),
+    ]);
+})->name('home');
 
-Route::get('/dashboard', function () {
+Route::get('dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/component', [ComponentController::class, 'index'])->name('component');
-    Route::post('component/filter', [ComponentController::class, 'filter'])->name('component.filter');
-    Route::post('component/store', [ComponentController::class, 'store'])->name('component.store');
-    Route::post('component/update', [ComponentController::class, 'update'])->name('component.update');
-    Route::delete('component/destroy/{id}', [ComponentController::class, 'destroy'])->name('component.destroy');
+Route::resource("users", UserController::class)
+                    ->only(['create', 'store'])
+                    ->middleware("permission:users.create");
+                 
+Route::resource("users", UserController::class)
+                    ->only(['edit', 'update'])
+                    ->middleware("permission:users.edit");        
+                    
+Route::resource("users", UserController::class)
+                    ->only(['destroy'])
+                    ->middleware("permission:users.delete");     
 
-    Route::get('/profile/{id?}', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+Route::resource("users", UserController::class)
+                    ->only(['index', 'show'])
+                    ->middleware("permission:users.create|users.edit|users.delete|users.view");    
+                    
+Route::resource("roles", RoleController::class)
+                    ->only(['create', 'store'])
+                    ->middleware("permission:roles.create");
 
-    Route::get('user', [UserController::class, 'index'])->name('user');
-    Route::post('user/filter', [UserController::class, 'filter'])->name('user.filter');
-    Route::post('user/create', [UserController::class, 'create'])->name('user.create');
-    Route::delete('user/destroy/{id}', [UserController::class, 'destroy'])->name('user.destroy');
+Route::resource("roles", RoleController::class)
+                    ->only(['edit', 'update'])
+                    ->middleware("permission:roles.edit");
 
-    Route::get('role', [RoleController::class, 'index'])->name('role');
-    Route::post('role/filter', [RoleController::class, 'filter'])->name('role.filter');
-    Route::get('role/edit/{id}', [RoleController::class, 'indexEdit'])->name('role.edit');
-    Route::post('role/create', [RoleController::class, 'create'])->name('role.create');
-    Route::post('role/update', [RoleController::class, 'update'])->name('role.update');
-    Route::delete('role/destroy/{id}', [RoleController::class, 'destroy'])->name('role.destroy');
-});
+Route::resource("roles", RoleController::class)
+                    ->only(['destroy'])
+                    ->middleware("permission:roles.delete");   
+                    
+Route::resource("roles", RoleController::class)
+                    ->only(['index', 'show'])
+                    ->middleware("permission:roles.create|roles.edit|roles.delete|roles.view");    
 
-require __DIR__.'/auth.php';
+Route::resource("packages", PackageController::class);
+
+Route::resource("subpackages", SubpackageController::class);
+
+require __DIR__.'/settings.php';

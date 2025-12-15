@@ -25,37 +25,22 @@ class RolePermissionSeeder extends Seeder
 
         $arrayOfPermissionNames = [
             //Admin Settings
-            ['name'  => 'view.admin', 'description'  => 'View Admin Settings', 'group'  => 'Admin'],
-
-            //Branch
-            ['name'  => 'view.branch', 'description'  => 'View Branch', 'group'  => 'Branch'],
-            ['name'  => 'create.branch', 'description'  => 'Create Branch', 'group'  => 'Branch'],
-            ['name'  => 'edit.branch', 'description'  => 'Edit Branch', 'group'  => 'Branch'],
-            ['name'  => 'delete.branch', 'description'  => 'Delete Branch', 'group'  => 'Branch'],
-
-            //Agency
-            ['name'  => 'view.agency', 'description'  => 'View Agency', 'group'  => 'Agency'],
-            ['name'  => 'create.agency', 'description'  => 'Create Agency', 'group'  => 'Agency'],
-            ['name'  => 'edit.agency', 'description'  => 'Edit Agency', 'group'  => 'Agency'],
-            ['name'  => 'delete.agency', 'description'  => 'Delete Agency', 'group'  => 'Agency'],
-
-            //Packages
-            ['name'  => 'view.package', 'description'  => 'View Package', 'group'  => 'Packages'],
-            ['name'  => 'create.package', 'description'  => 'Create Package', 'group'  => 'Packages'],
-            ['name'  => 'edit.package', 'description'  => 'Edit Package', 'group'  => 'Packages'],
-            ['name'  => 'delete.package', 'description'  => 'Delete Package', 'group'  => 'Packages'],
-
-            //User
-            ['name'  => 'view.user', 'description'  => 'View User', 'group'  => 'User'],
-            ['name'  => 'create.user', 'description'  => 'Create User', 'group'  => 'User'],
-            ['name'  => 'edit.user', 'description'  => 'Edit User', 'group'  => 'User'],
-            ['name'  => 'delete.user', 'description'  => 'Delete User', 'group'  => 'User'],
+            ['name'  => 'users.view', 'description'  => 'View User', 'group'  => 'User'],
+            ['name'  => 'users.create', 'description'  => 'Create User', 'group'  => 'User'],
+            ['name'  => 'users.edit', 'description'  => 'Edit User', 'group'  => 'User'],
+            ['name'  => 'users.delete', 'description'  => 'Delete User', 'group'  => 'User'],
 
             //Role
-            ['name'  => 'view.role', 'description'  => 'View Role', 'group'  => 'Role'],
-            ['name'  => 'create.role', 'description'  => 'Create Role', 'group'  => 'Role'],
-            ['name'  => 'edit.role', 'description'  => 'Edit Role', 'group'  => 'Role'],
-            ['name'  => 'delete.role', 'description'  => 'Delete Role', 'group'  => 'Role'],
+            ['name'  => 'roles.view', 'description'  => 'View Role', 'group'  => 'Role'],
+            ['name'  => 'roles.create', 'description'  => 'Create Role', 'group'  => 'Role'],
+            ['name'  => 'roles.edit', 'description'  => 'Edit Role', 'group'  => 'Role'],
+            ['name'  => 'roles.delete', 'description'  => 'Delete Role', 'group'  => 'Role'],
+
+            //Packages
+            ['name'  => 'packages.view', 'description'  => 'View Package', 'group'  => 'Packages'],
+            ['name'  => 'packages.create', 'description'  => 'View Package', 'group'  => 'Packages'],
+            ['name'  => 'packages.edit', 'description'  => 'View Package', 'group'  => 'Packages'],
+            ['name'  => 'packages.delete', 'description'  => 'View Package', 'group'  => 'Packages'],
 
         ];
 
@@ -83,7 +68,7 @@ class RolePermissionSeeder extends Seeder
             ['name'  => 'technical-engineer', 'description'  => 'Technical Engineer'],
             ['name'  => 'operation-engineer', 'description'  => 'Operation Engineer'],
             ['name'  => 'agent', 'description'  => 'Agent'],
-            ['name'  => 'permohon', 'description'  => 'Permohon'],
+            ['name'  => 'pemohon', 'description'  => 'Pemohon'],
             ['name'  => 'chief-technology-officer', 'description'  => 'Chief Technology Officer'],
         ];
 

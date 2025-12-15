@@ -2,32 +2,30 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Hash;
+use App\Models\User; // Import your User model
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class AdminSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
-        // Check if the admin with the given email already exists
-        if (User::where('email', 'admin@email.com')->exists()) {
-            $this->command->info('Admin user already exists.');
-            return;
-        }
+        // Create the admin role if it doesn't exist
+        $role = Role::firstOrCreate(['name' => 'admin']);
 
-        // Create the admin user if it doesn't exist
-        $user = new User();
-        $user->password = Hash::make('password');
-        $user->email = 'admin@email.com';
-        $user->name = 'Admin';
-        $user->save();
+        // Create an admin user
+        $admin = User::create([
+            'name' => 'Admin',
+            'email' => 'admin@gmail.com',
+            'password' => bcrypt('1'),  // Use a secure password in production
+        ]);
 
-        $user->assignRole('super-admin');
+        // Assign the admin role to the user
+        $admin->assignRole('super-admin');
+
+        // Get all permissions and assign them to the admin role
+        $permissions = Permission::all();
+        $role->givePermissionTo($permissions);
     }
 }

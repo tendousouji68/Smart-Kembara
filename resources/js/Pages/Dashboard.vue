@@ -1,20 +1,47 @@
-<script setup>
-import Layout from '@/Layouts/AuthenticatedLayout.vue';
+<script setup lang="ts">
+import AppLayout from '@/layouts/AppLayout.vue';
+import { dashboard } from '@/routes';
+import { type BreadcrumbItem } from '@/types';
 import { Head } from '@inertiajs/vue3';
+import PlaceholderPattern from '../components/PlaceholderPattern.vue';
+
+const breadcrumbs: BreadcrumbItem[] = [
+    {
+        title: 'Dashboard',
+        href: dashboard().url,
+    },
+];
 </script>
 
 <template>
     <Head title="Dashboard" />
 
-    <Layout>
-        <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Dashboard</h2>
-        </template>
-
-        <div class="py-12">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">You're logged in!</div>
+    <AppLayout :breadcrumbs="breadcrumbs">
+        <div
+            class="flex h-full flex-1 flex-col gap-4 overflow-x-auto rounded-xl p-4"
+        >
+            <div class="grid auto-rows-min gap-4 md:grid-cols-3">
+                <div
+                    class="relative aspect-video overflow-hidden rounded-xl border border-sidebar-border/70 dark:border-sidebar-border"
+                >
+                    <PlaceholderPattern />
+                </div>
+                <div
+                    class="relative aspect-video overflow-hidden rounded-xl border border-sidebar-border/70 dark:border-sidebar-border"
+                >
+                    <PlaceholderPattern />
+                </div>
+                <div
+                    class="relative aspect-video overflow-hidden rounded-xl border border-sidebar-border/70 dark:border-sidebar-border"
+                >
+                    <PlaceholderPattern />
+                </div>
+            </div>
+            <div
+                class="relative min-h-[100vh] flex-1 rounded-xl border border-sidebar-border/70 md:min-h-min dark:border-sidebar-border"
+            >
+                <PlaceholderPattern />
             </div>
         </div>
-    </Layout>
+    </AppLayout>
 </template>
