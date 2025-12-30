@@ -9,20 +9,12 @@ class Subpackage extends Model
 {
     use HasFactory;
 
-    protected $table = 'tbl_ap_subpackages';  // Your table name
-    protected $primaryKey = 'id';  // Primary key field
-    protected $fillable = [
-        'package_id', 
-        'name', 
-        'picture', 
-        'description', 
-        'price', 
-        'created_at', 
-        'updated_at'
-    ];  // Add your fillable fields here
+    protected $table = 'tbl_ap_subpackages'; // Match your table name
+    protected $fillable = ['package_id', 'name', 'picture', 'description', 'price'];
 
+    // Relationship: A subpackage belongs to a package
     public function package()
     {
-        return $this->belongsTo(Package::class, 'package_id');
+        return $this->belongsTo(Pakej::class, 'package_id');
     }
 }
